@@ -5,7 +5,7 @@ def findPeakElement(nums):
             
             if (nums[i]>nums[i+1] and nums[i]>nums[i-1]) or nums[0]>nums[1]:
                 return i
-            elif nums[i]>nums[i-1]:
+            elif nums[n-1]>nums[n-2]:
                 return i
 
 
