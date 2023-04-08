@@ -2,12 +2,10 @@ def findPeakElement(nums):
         n=len(nums)
        
         for i in range(n-1):
-            if i==0 and nums[i]>nums[i+1]:
+            
+            if (nums[i]>nums[i+1] and nums[i]>nums[i-1]) or nums[0]>nums[1]:
                 return i
-
-            if nums[i]>nums[i+1] and nums[i]>nums[i-1]:
-                return i
-            if i==n and nums[i]>nums[i-1]:
+            elif nums[i]>nums[i-1]:
                 return i
 
 
