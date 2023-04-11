@@ -1,0 +1,34 @@
+from __future__ import annotations
+import pdb
+
+class Solution:
+    k=0
+    def search(self, nums: List[int], target: int) -> int:
+        
+        n=len(nums)
+        if n==1 and target==nums[0]:
+            
+            return n-1
+        elif n==1 and target!=nums[0]:
+            return -1
+       # pdb.set_trace()
+        
+        mid=((n)//2)
+        print(mid)
+        print(nums[mid])
+        
+        if nums[mid]<target:
+            self.k=mid+self.k
+           
+            return self.search(nums[mid:],target)
+        elif nums[mid]>target:
+            return self.search(nums[:mid],target)
+        elif nums[mid]==target:
+            
+            return self.k+mid
+        return -1
+a=Solution()
+print(a.search([-1,0,3,5,9,12,13,14,15],0))
+
+        
+
